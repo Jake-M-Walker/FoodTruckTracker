@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrucks.WebMVC", "FoodTrucks\FoodTrucks.WebMVC.csproj", "{73EC4CE7-B2FB-4689-B429-3AFB29B83D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrucks.Data", "FoodTrucks.Data\FoodTrucks.Data.csproj", "{BF2921E4-FCE4-4E05-89C0-B8B828DA85B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73EC4CE7-B2FB-4689-B429-3AFB29B83D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EC4CE7-B2FB-4689-B429-3AFB29B83D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EC4CE7-B2FB-4689-B429-3AFB29B83D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EC4CE7-B2FB-4689-B429-3AFB29B83D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2921E4-FCE4-4E05-89C0-B8B828DA85B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2921E4-FCE4-4E05-89C0-B8B828DA85B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2921E4-FCE4-4E05-89C0-B8B828DA85B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2921E4-FCE4-4E05-89C0-B8B828DA85B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE70BA9A-7FF5-42B6-AC1D-1BB9B5F0C1E8}
+	EndGlobalSection
+EndGlobal
