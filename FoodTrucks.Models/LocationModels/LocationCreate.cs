@@ -8,5 +8,6 @@ namespace FoodTrucks.Models
 {
     public class LocationCreate
     {
+
     }
 }

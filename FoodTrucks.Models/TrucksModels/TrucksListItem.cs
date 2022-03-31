@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    class TrucksListItem
+    public class TrucksListItem
     {
+        public int TruckId { get; set; }
+
+        public string TruckName { get; set; }
+
+        public string Owner { get; set; }
+
+        public string Description { get; set; }
     }
 }

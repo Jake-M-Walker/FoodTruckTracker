@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,16 +45,24 @@
     <Compile Include="LocationModels\LocationListItem.cs" />
     <Compile Include="LocationModels\LocationDetail.cs" />
     <Compile Include="LocationModels\LocationCreate.cs" />
-    <Compile Include="MenuModels\MenuCreate.cs" />
-    <Compile Include="MenuModels\MenuDetail.cs" />
-    <Compile Include="MenuModels\MenuListItem.cs" />
+    <Compile Include="MenuItemsModels\MenuItemsEdit.cs" />
+    <Compile Include="MenuItemsModels\MenuItemsCreate.cs" />
+    <Compile Include="MenuItemsModels\MenuItemsDetail.cs" />
+    <Compile Include="MenuItemsModels\MenuItemsListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatsModels\StatsCreate.cs" />
-    <Compile Include="StatsModels\StatsDetail.cs" />
-    <Compile Include="StatsModels\StatsListItem.cs" />
+    <Compile Include="TransactionModels\TransactionCreate.cs" />
+    <Compile Include="TransactionModels\TransactionDetail.cs" />
+    <Compile Include="TransactionModels\TransactionListItem.cs" />
+    <Compile Include="TrucksModels\TrucksEdit.cs" />
     <Compile Include="TrucksModels\TrucksCreate.cs" />
     <Compile Include="TrucksModels\TrucksDetail.cs" />
     <Compile Include="TrucksModels\TrucksListItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoodTrucks.Data\FoodTrucks.Data.csproj">
+      <Project>{bf2921e4-fce4-4e05-89c0-b8b828da85b1}</Project>
+      <Name>FoodTrucks.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

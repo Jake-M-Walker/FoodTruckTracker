@@ -28,6 +28,6 @@ namespace FoodTrucks.Data
 
 
 
-        public virtual ICollection<Menu> MenutItems { get; set; }
+        public virtual ICollection<MenuItems> MenutItems { get; set; }
     }
 }

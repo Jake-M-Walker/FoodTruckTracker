@@ -14,6 +14,9 @@ namespace FoodTrucks.Data
         public int TruckId { get; set; }
 
         [Required]
+        public string TruckName { get; set; }
+
+        [Required]
         public string UserId { get; set; }
 
         [Required]
@@ -28,7 +31,7 @@ namespace FoodTrucks.Data
 
         public virtual ICollection<Locations> Locations { get; set; }
 
-        public virtual ICollection<Menu> MenuItems { get; set; }
+        public virtual ICollection<MenuItems> MenuItems { get; set; }
 
 
     }
