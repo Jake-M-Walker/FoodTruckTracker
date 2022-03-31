@@ -8,24 +8,17 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Data
 {
-    public class Menu
+    public class Transactions
     {
         [Key]
         [Required]
-        public int MenuId { get; set; }
+        public int TransactionId { get; set; }
 
         [Required]
-        public string ItemName { get; set; }
+        public DateTimeOffset TransactionDate { get; set; }
 
         [Required]
-        public string ItemDescription { get; set; }
-
-        [Required]
-        public decimal ItemPrice { get; set; }
-
-        [Required]
-        public decimal CostforTruck { get; set; }
-
+        public string UserId { get; set; }
 
         [Required]
         [ForeignKey(nameof(Trucks))]
@@ -34,10 +27,7 @@ namespace FoodTrucks.Data
         public virtual Trucks Truck { get; set; }
 
 
-        public virtual ICollection<Locations> Locations { get; set; }
 
-        
-
-
+        public virtual ICollection<Menu> MenutItems { get; set; }
     }
 }

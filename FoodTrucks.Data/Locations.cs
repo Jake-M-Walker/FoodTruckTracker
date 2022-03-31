@@ -13,19 +13,22 @@ namespace FoodTrucks.Data
         public int LocationId { get; set; }
 
         [Required]
+        public string LocationName { get; set; }
+
+        [Required]
         public string Address { get; set; }
         
         [Required]
-        public string TimeOpen { get; set; }
+        public DateTimeOffset TimeOpen { get; set; }
 
         [Required]
-        public string TimeClose { get; set; }
+        public DateTimeOffset TimeClose { get; set; }
 
         [Required]
-        public bool IsCurrent { get; set; }
+        public bool IsHere { get; set; }
 
         [Required]
-        public bool IsEvent { get; set; }
+        public DateTimeOffset DateatLocation { get; set; }
 
     }
 }

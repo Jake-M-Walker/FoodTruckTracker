@@ -14,14 +14,21 @@ namespace FoodTrucks.Data
         public int TruckId { get; set; }
 
         [Required]
-        public int OwnerId { get; set; }
+        public string UserId { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public string Owner { get; set; }
+
+        [Required]
+        public string Description { get; set; }
 
         [Required]
         public string FoodType { get; set; }
 
+
+        public virtual ICollection<Locations> Locations { get; set; }
+
+        public virtual ICollection<Menu> MenuItems { get; set; }
 
 
     }
