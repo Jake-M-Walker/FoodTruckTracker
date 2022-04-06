@@ -20,13 +20,16 @@ namespace FoodTrucks.Data
         [Required]
         public string UserId { get; set; }
 
-        [Required]
+        
         [ForeignKey(nameof(Trucks))]
         public int TruckId { get; set; }
 
-        public virtual Trucks Truck { get; set; }
+        public virtual Trucks Trucks { get; set; }
 
+        [ForeignKey(nameof(MenutItems))]
+        public int ItemId { get; set; }
 
+        public virtual MenuItems MenuItem { get; set; }
 
         public virtual ICollection<MenuItems> MenutItems { get; set; }
     }

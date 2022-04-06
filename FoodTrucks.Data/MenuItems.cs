@@ -12,7 +12,7 @@ namespace FoodTrucks.Data
     {
         [Key]
         [Required]
-        public int MenuId { get; set; }
+        public int ItemId { get; set; }
 
         [Required]
         public string ItemName { get; set; }
@@ -27,14 +27,13 @@ namespace FoodTrucks.Data
         public decimal CostforTruck { get; set; }
 
 
-        [Required]
         [ForeignKey(nameof(Trucks))]
         public int TruckId { get; set; }
 
-        public virtual Trucks Truck { get; set; }
+        public virtual Trucks Trucks { get; set; }
 
 
-        public virtual ICollection<Locations> Locations { get; set; }
+        
 
         
 

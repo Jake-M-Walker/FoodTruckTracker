@@ -8,7 +8,7 @@ namespace FoodTrucks.Models
 {
     class MenuItemDetail
     {
-        public int MenuItemId { get; set; }
+        public int ItemId { get; set; }
 
         public string ItemName { get; set; }
 

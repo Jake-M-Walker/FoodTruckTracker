@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    class StatsListItem
+    class TransactionsListItem
     {
     }
 }
