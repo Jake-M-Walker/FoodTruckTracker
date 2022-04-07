@@ -21,7 +21,7 @@ namespace FoodTrucks.Models
         [ForeignKey(nameof(Trucks))]
         public int TruckId { get; set; }
 
-        public virtual Trucks Trucks { get; set; }
+        public virtual Trucks Truck { get; set; }
 
         [ForeignKey(nameof(MenuItems))]
         public int ItemId { get; set; }

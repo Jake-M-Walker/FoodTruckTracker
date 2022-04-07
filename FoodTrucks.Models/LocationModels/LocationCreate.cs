@@ -16,15 +16,15 @@ namespace FoodTrucks.Models
         public string Address { get; set; }
 
         [Required]
-        public DateTimeOffset TimeOpen { get; set; }
+        public string TimeOpen { get; set; }
 
         [Required]
-        public DateTimeOffset TimeClose { get; set; }
+        public string TimeClose { get; set; }
 
         [Required]
         public bool IsHere { get; set; }
 
         [Required]
-        public DateTimeOffset DateatLocation { get; set; }
+        public string DateatLocation { get; set; }
     }
 }

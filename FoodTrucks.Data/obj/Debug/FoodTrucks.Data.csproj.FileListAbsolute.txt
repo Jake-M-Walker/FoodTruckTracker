@@ -9,8 +9,8 @@ C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTr
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\obj\Debug\FoodTrucks.Data.csproj.AssemblyReference.cache
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\obj\Debug\FoodTrucks.Data.csproj.CoreCompileInputs.cache
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\obj\Debug\FoodTrucks.Data.csproj.CopyComplete
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\obj\Debug\FoodTrucks.Data.dll
 C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\obj\Debug\FoodTrucks.Data.pdb
-C:\Users\owner\OneDrive\Desktop\Eleven Fifty Projects\RedBadge\FoodTrucks\FoodTrucks\FoodTrucks.Data\obj\Debug\FoodTrucks.Data.csproj.AssemblyReference.cache

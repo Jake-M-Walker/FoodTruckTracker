@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrucks.Data", "FoodTruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrucks.Models", "FoodTrucks.Models\FoodTrucks.Models.csproj", "{443C5F3F-3032-4D79-A98F-66583BC71A6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrucks.Services", "FoodTrucks.Services\FoodTrucks.Services.csproj", "{8D7EAC19-69D5-4A73-8EBD-242FCBAE3DC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{443C5F3F-3032-4D79-A98F-66583BC71A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{443C5F3F-3032-4D79-A98F-66583BC71A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{443C5F3F-3032-4D79-A98F-66583BC71A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7EAC19-69D5-4A73-8EBD-242FCBAE3DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7EAC19-69D5-4A73-8EBD-242FCBAE3DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7EAC19-69D5-4A73-8EBD-242FCBAE3DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7EAC19-69D5-4A73-8EBD-242FCBAE3DC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

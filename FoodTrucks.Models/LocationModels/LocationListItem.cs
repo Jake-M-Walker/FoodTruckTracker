@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    class LocationListItem
+    public class LocationListItem
     {
         public int LocationId { get; set; }
 
@@ -14,12 +14,12 @@ namespace FoodTrucks.Models
 
         public string Address { get; set; }
 
-        public DateTimeOffset TimeOpen { get; set; }
+        public string TimeOpen { get; set; }
 
-        public DateTimeOffset TimeClose { get; set; }
+        public string TimeClose { get; set; }
 
         public bool IsHere { get; set; }
 
-        public DateTimeOffset DateatLocation { get; set; }
+        public string DateatLocation { get; set; }
     }
 }
