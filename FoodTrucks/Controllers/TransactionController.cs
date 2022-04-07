@@ -20,12 +20,12 @@ namespace FoodTrucks.Controllers
         public ActionResult Create()
         {
             var context = new ApplicationDbContext();
-            ViewData["MenuItems"] = context.MenuItems.Select(menuitems => new SelectListItem
+            ViewData["MenuItems"] = context.MenuItems.AsEnumerable().Select(menuitems => new SelectListItem
             {
                 Text = menuitems.ItemName,
                 Value = menuitems.ItemId.ToString()
             });
-            ViewData["Trucks"] = context.Trucks.Select(truck => new SelectListItem
+            ViewData["Trucks"] = context.Trucks.AsEnumerable().Select(truck => new SelectListItem
             {
                 Text = truck.TruckName,
                 Value = truck.TruckId.ToString()
@@ -39,12 +39,12 @@ namespace FoodTrucks.Controllers
         {
             var context = new ApplicationDbContext();
 
-            ViewData["MenuItems"] = context.MenuItems.Select(menuitems => new SelectListItem
+            ViewData["MenuItems"] = context.MenuItems.AsEnumerable().Select(menuitems => new SelectListItem
             {
                 Text = menuitems.ItemName,
                 Value = menuitems.ItemId.ToString()
             });
-            ViewData["Trucks"] = context.Trucks.Select(truck => new SelectListItem
+            ViewData["Trucks"] = context.Trucks.AsEnumerable().Select(truck => new SelectListItem
             {
                 Text = truck.TruckName,
                 Value = truck.TruckId.ToString()
