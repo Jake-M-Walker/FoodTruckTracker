@@ -16,5 +16,7 @@ namespace FoodTrucks.Models
 
         public string Description { get; set; }
 
+        public string FoodType { get; set; }
+
     }
 }

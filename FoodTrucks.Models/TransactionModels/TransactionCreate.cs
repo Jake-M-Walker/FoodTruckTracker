@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    public class TransactionsCreate
+    public class TransactionCreate
     {
          [Required]
         public DateTimeOffset TransactionDate { get; set; }

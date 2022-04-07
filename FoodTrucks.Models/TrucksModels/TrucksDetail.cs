@@ -20,6 +20,8 @@ namespace FoodTrucks.Models
 
         public string UserName { get; set; }
 
+        public string FoodType { get; set; }
+
 
     }
 }

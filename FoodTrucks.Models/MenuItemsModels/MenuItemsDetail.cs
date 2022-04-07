@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    class MenuItemDetail
+    public class MenuItemDetail
     {
         public int ItemId { get; set; }
 
