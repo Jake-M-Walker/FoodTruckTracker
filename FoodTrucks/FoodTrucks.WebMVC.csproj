@@ -169,7 +169,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuItemController.cs" />
+    <Compile Include="Controllers\TruckController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Locations\" />
+    <Folder Include="Views\MenuItem\" />
+    <Folder Include="Views\Truck\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -259,6 +265,10 @@
     <ProjectReference Include="..\FoodTrucks.Models\FoodTrucks.Models.csproj">
       <Project>{443c5f3f-3032-4d79-a98f-66583bc71a6a}</Project>
       <Name>FoodTrucks.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FoodTrucks.Services\FoodTrucks.Services.csproj">
+      <Project>{8D7EAC19-69D5-4A73-8EBD-242FCBAE3DC4}</Project>
+      <Name>FoodTrucks.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

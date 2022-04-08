@@ -29,5 +29,9 @@ namespace FoodTrucks.Data
         [ForeignKey(nameof(MenuItems))]
         public int ItemId { get; set; }
         public virtual MenuItems MenuItem { get; set; }
+
+        public int NumberBought { get; set; }
+
+        public decimal TotalCost { get; set; }
     }
 }

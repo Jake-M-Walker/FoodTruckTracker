@@ -28,6 +28,10 @@ namespace FoodTrucks.Models
 
         public virtual MenuItems MenuItem { get; set; }
 
+        public int NumberBought { get; set; }
+
+        public decimal TotalCost { get; set; }
+
 
 
     }

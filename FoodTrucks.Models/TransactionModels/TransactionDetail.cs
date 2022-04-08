@@ -9,13 +9,19 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    class TransactionsDetail
+   public class TransactionsDetail
     {
         [Required]
         public DateTimeOffset TransactionDate { get; set; }
 
         [Required]
         public string UserId { get; set; }
+
+        public int TransactionId { get; set; }
+
+        public int NumberBought { get; set; }
+
+        public decimal TotalCost { get; set; }
 
 
         [ForeignKey(nameof(Trucks))]
