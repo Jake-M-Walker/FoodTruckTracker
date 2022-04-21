@@ -21,13 +21,13 @@ namespace FoodTrucks.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.MenuItems.Add(new MenuItems
+                ctx.MenuItems.Add(new MenuItem
                 {
                     ItemName = model.ItemName,
                     ItemDescription = model.ItemDescription,
                     ItemPrice = model.ItemPrice,
-                    CostforTruck = model.CostforTruck
-                    //TruckId
+                    CostforTruck = model.CostforTruck,
+                    TruckId = model.TruckId
                 });
                 if(ctx.SaveChanges() == 1)
                 {

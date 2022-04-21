@@ -21,13 +21,12 @@ namespace FoodTrucks.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Locations.Add(new Locations
+                ctx.Locations.Add(new Location
                 {
                     LocationName = model.LocationName,
                     Address = model.Address,
                     TimeOpen = model.TimeOpen,
                     TimeClose = model.TimeClose,
-                    IsHere = model.IsHere,
                     DateatLocation = model.DateatLocation
                 });
 
@@ -54,7 +53,7 @@ namespace FoodTrucks.Services
                         Address = e.Address,
                         TimeOpen = e.TimeOpen,
                         TimeClose = e.TimeClose,
-                        IsHere = e.IsHere,
+                        IsHere = ctx.Trucks.Where(t => t.LocationId == e.LocationId).Count(),
                         DateatLocation = e.DateatLocation
                     });
                 return query.ToArray();
@@ -75,7 +74,7 @@ namespace FoodTrucks.Services
                         Address = entity.Address,
                         TimeOpen = entity.TimeOpen,
                         TimeClose = entity.TimeClose,
-                        IsHere = entity.IsHere,
+                        IsHere = ctx.Trucks.Where(t => t.LocationId == entity.LocationId).Select(t => new LocationDetailTruck { TruckId = t.TruckId, TruckName = t.TruckName }).ToList(),
                         DateatLocation = entity.DateatLocation
                     };
                 }
@@ -92,7 +91,7 @@ namespace FoodTrucks.Services
                 if(entity != null)
                 {
                     ctx.Locations.Remove(entity);
-                    if(ctx.SaveChanges() == 1)
+                    if(ctx.SaveChanges() > 0)
                     {
                         return true;
                     }
@@ -108,13 +107,12 @@ namespace FoodTrucks.Services
                 var entity = ctx.Locations.Find(model.LocationId);
                 if(entity != null)
                 {
-                    entity.LocationName = entity.LocationName;
-                    entity.Address = entity.Address;
-                    entity.TimeOpen = entity.TimeOpen;
-                    entity.TimeClose = entity.TimeClose;
-                    entity.IsHere = entity.IsHere;
-                    entity.DateatLocation = entity.DateatLocation;
-                    if(ctx.SaveChanges() == 1)
+                    entity.LocationName = model.LocationName;
+                    entity.Address = model.Address;
+                    entity.TimeOpen = model.TimeOpen;
+                    entity.TimeClose = model.TimeClose;
+                    entity.DateatLocation = model.DateatLocation;
+                    if(ctx.SaveChanges() > 0)
                     {
                         return true;
                     }

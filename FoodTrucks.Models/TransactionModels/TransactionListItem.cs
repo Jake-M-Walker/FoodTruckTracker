@@ -9,23 +9,32 @@ using System.Threading.Tasks;
 
 namespace FoodTrucks.Models
 {
-    class TransactionsListItem
+   public class TransactionsListItem
     {
-        [Required]
+        [Display(Name = "Transaction Id")]
+        public int TransactionId { get; set; }
+
+        [Display(Name = "Transaction Date")]
         public DateTimeOffset TransactionDate { get; set; }
 
-        [Required]
+        [Display(Name = "User Id")]
         public string UserId { get; set; }
 
+        [Display(Name ="User Name")]
+        public string UserName { get; set; }
 
-        [ForeignKey(nameof(Trucks))]
+        [Display(Name = "Truck Id")]
         public int TruckId { get; set; }
 
-        public virtual Trucks Truck { get; set; }
+        [Display(Name ="Truck")]
+        public string TruckName { get; set; }
 
-        [ForeignKey(nameof(MenuItems))]
+        [Display(Name = "Item Id")]
         public int ItemId { get; set; }
 
-        public virtual MenuItems MenuItem { get; set; }
+        [Display(Name = "Item Bought")]
+        public string ItemName { get; set; }
+
+
     }
 }

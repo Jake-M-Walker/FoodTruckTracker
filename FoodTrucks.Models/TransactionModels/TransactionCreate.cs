@@ -11,26 +11,20 @@ namespace FoodTrucks.Models
 {
     public class TransactionCreate
     {
-         [Required]
+        [Display(Name = "Transaction Date")]
         public DateTimeOffset TransactionDate { get; set; }
 
-        [Required]
+        [Display(Name = "User Name")]
         public string UserId { get; set; }
 
-        
-        [ForeignKey(nameof(Trucks))]
+        [Display(Name = "Truck Id")]
         public int TruckId { get; set; }
 
-        public virtual Trucks Truck { get; set; }
-
-        [ForeignKey(nameof(MenuItems))]
+        [Display(Name = "Item Id")]
         public int ItemId { get; set; }
 
-        public virtual MenuItems MenuItem { get; set; }
-
+        [Display(Name = "Number Bought")]
         public int NumberBought { get; set; }
-
-        public decimal TotalCost { get; set; }
 
 
 

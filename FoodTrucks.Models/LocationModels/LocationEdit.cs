@@ -9,24 +9,21 @@ namespace FoodTrucks.Models
 {
     public class LocationEdit
     {
+        [Display(Name = "Location Id")]
         public int LocationId { get; set; }
 
-        [Required]
+        [Display(Name = "Location Name")]
         public string LocationName { get; set; }
 
-        [Required]
         public string Address { get; set; }
 
-        [Required]
+        [Display(Name = "Time Opened")]
         public string TimeOpen { get; set; }
 
-        [Required]
+        [Display(Name = "Time Closed")]
         public string TimeClose { get; set; }
 
-        [Required]
-        public bool IsHere { get; set; }
-
-        [Required]
+        [Display(Name = "Date at Location")]
         public string DateatLocation { get; set; }
     }
 }

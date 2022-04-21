@@ -17,18 +17,18 @@ namespace FoodTrucks.Services
             _userId = userId;
         }
 
+
         public bool CreateTransaction(TransactionCreate model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Transactions.Add(new Transactions
+                ctx.Transactions.Add(new Transaction
                 {
                     TransactionDate = DateTimeOffset.Now,
                     UserId = _userId,
-                    TruckId = model.Truck.TruckId,
-                    ItemId = model.MenuItem.ItemId,
+                    TruckId = model.TruckId,
+                    ItemId = model.ItemId,
                     NumberBought = model.NumberBought,
-                    TotalCost = model.MenuItem.ItemPrice * model.NumberBought
                 });
 
                 if(ctx.SaveChanges() == 1)
@@ -51,9 +51,13 @@ namespace FoodTrucks.Services
                         TransactionId = entity.TransactionId,
                         UserId = _userId,
                         TruckId = entity.TruckId,
+                        TruckName = entity.Truck.TruckName,
                         ItemId = entity.ItemId,
-                        TotalCost = entity.MenuItem.ItemPrice * entity.NumberBought,
-                        TransactionDate = entity.TransactionDate
+                        ItemName = entity.MenuItem.ItemName,
+                        NumberBought = entity.NumberBought,
+                        TotalCost = entity.TotalCost,
+                        TransactionDate = entity.TransactionDate,
+                        UserName = entity.ApplicationUser.Email,
                     };
                 }
                 return null;
@@ -68,7 +72,7 @@ namespace FoodTrucks.Services
                 if(entity != null)
                 {
                     ctx.Transactions.Remove(entity);
-                    if(ctx.SaveChanges() == 1)
+                    if(ctx.SaveChanges() > 1)
                     {
                         return true;
                     }
@@ -89,7 +93,6 @@ namespace FoodTrucks.Services
                     entity.TruckId = model.TruckId;
                     entity.ItemId = model.ItemId;
                     entity.NumberBought = model.NumberBought;
-                    entity.TotalCost = model.NumberBought * model.MenuItem.ItemPrice;
                     if(ctx.SaveChanges() == 1)
                     {
                         return true;
@@ -98,5 +101,30 @@ namespace FoodTrucks.Services
                 return false;
             }
         }
+
+        public IEnumerable<TransactionsListItem> GetTransactions()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Transactions
+                    .Select(e =>
+                    new TransactionsListItem
+                    {
+                        TransactionId = e.TransactionId,
+                        TransactionDate = e.TransactionDate,
+                        UserId = _userId,
+                        UserName = e.ApplicationUser.Email,
+                        TruckId = e.Truck.TruckId,
+                        TruckName = e.Truck.TruckName,
+                        ItemId = e.MenuItem.ItemId,
+                        ItemName = e.MenuItem.ItemName,
+
+                    });
+                return query.ToArray();
+            }
+        }
+
     }
 }

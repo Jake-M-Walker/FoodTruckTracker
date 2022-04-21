@@ -21,13 +21,14 @@ namespace FoodTrucks.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                ctx.Trucks.Add(new Trucks
+                ctx.Trucks.Add(new Truck
                 {
                     TruckName = model.TruckName,
                     UserId = _userId,
                     Owner = model.Owner,
                     Description = model.Description,
-                    FoodType = model.FoodType
+                    FoodType = model.FoodType,
+                    LocationId = model.LocationId,
                 });
                 if(ctx.SaveChanges() == 1)
                 {
@@ -50,7 +51,9 @@ namespace FoodTrucks.Services
                         TruckId = e.TruckId,
                         TruckName = e.TruckName,
                         Owner = e.Owner,
-                        Description = e.Description
+                        Description = e.Description,
+                        FoodType = e.FoodType,
+                        LocationName = e.Location == null ? "None": e.Location.LocationName
                     });
                 return query.ToArray();
             }
@@ -70,7 +73,10 @@ namespace FoodTrucks.Services
                         UserId = entity.UserId,
                         Description = entity.Description,
                         FoodType = entity.FoodType,
-                        UserName = entity.ApplicationUser.Email
+                        UserName = entity.ApplicationUser.Email,
+                        Owner = entity.Owner,
+                        LocationId = entity.LocationId,
+                        LocationName = entity.Location?.LocationName ?? "None"
                     };
                 }
                 return null;
@@ -105,6 +111,7 @@ namespace FoodTrucks.Services
                     entity.Owner = model.Owner;
                     entity.Description = model.Description;
                     entity.FoodType = model.FoodType;
+                    entity.LocationId = model.LocationId;
                     if(ctx.SaveChanges() == 1)
                     {
                         return true;

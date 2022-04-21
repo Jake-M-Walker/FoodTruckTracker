@@ -30,12 +30,24 @@ namespace FoodTrucks.Controllers
         //Get
         public ActionResult Create()
         {
+            var context = new ApplicationDbContext();
+            var locations = context.Locations.AsEnumerable().Select(location => new SelectListItem
+            {
+                Text = location.LocationName,
+                Value = location.LocationId.ToString()
+            });
+            locations = locations.Prepend(new SelectListItem
+            {
+                Text = "None",
+                Value = ""
+            });
+            ViewData["Locations"] = locations;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TruckCreate model)
+        public ActionResult Create(TrucksCreate model)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +100,7 @@ namespace FoodTrucks.Controllers
             {
                 ViewData["SaveResult"] = "The Truck could not be deleted";
             }
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit (int id)
@@ -101,10 +113,23 @@ namespace FoodTrucks.Controllers
                 TruckName = truck.TruckName,
                 Description = truck.Description,
                 Owner = truck.Owner,
-                FoodType = truck.FoodType
+                FoodType = truck.FoodType,
+                LocationId = truck.LocationId,
             };
             if(model != null)
             {
+                var context = new ApplicationDbContext();
+                var locations = context.Locations.AsEnumerable().Select(location => new SelectListItem
+                {
+                    Text = location.LocationName,
+                    Value = location.LocationId.ToString()
+                });
+                locations = locations.Prepend(new SelectListItem
+                {
+                    Text = "None",
+                    Value = ""
+                });
+                ViewData["Locations"] = locations;
                 return View(model);
             }
             return HttpNotFound();
@@ -123,7 +148,7 @@ namespace FoodTrucks.Controllers
             {
                 ViewData["SaveResult"] = "The Truck could not be updated";
             }
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
     }
 }

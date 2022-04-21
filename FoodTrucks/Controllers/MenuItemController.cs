@@ -30,6 +30,12 @@ namespace FoodTrucks.Controllers
         //Get
         public ActionResult Create()
         {
+            var context = new ApplicationDbContext();
+            ViewData["Trucks"] = context.Trucks.AsEnumerable().Select(truck => new SelectListItem
+            {
+                Text = truck.TruckName,
+                Value = truck.TruckId.ToString()
+            });
             return View();
         }
 
@@ -69,7 +75,7 @@ namespace FoodTrucks.Controllers
             var model = service.GetMenuItemById(id);
             if(model != null)
             {
-                return View(model);
+                return View (model);
             }
             return HttpNotFound();
         }
@@ -88,13 +94,19 @@ namespace FoodTrucks.Controllers
             {
                 ViewData["SaveResult"] = "The Menu Item could not be deleted";
             }
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
         {
             var service = CreateMenuItemService();
             var menuitem = service.GetMenuItemById(id);
+            var context = new ApplicationDbContext();
+            ViewData["Trucks"] = context.Trucks.AsEnumerable().Select(truck => new SelectListItem
+            {
+                Text = truck.TruckName,
+                Value = truck.TruckId.ToString()
+            });
             var model = new MenuItemEdit
             {
                 ItemId = menuitem.ItemId,
@@ -124,7 +136,7 @@ namespace FoodTrucks.Controllers
             {
                 ViewData["SaveResult"] = "The Menu Item could not be updated";
             }
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
     }
 }

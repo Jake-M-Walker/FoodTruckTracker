@@ -29,6 +29,7 @@ namespace FoodTrucks.Controllers
         //Get
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -57,6 +58,7 @@ namespace FoodTrucks.Controllers
             var model = service.GetLocationById(id);
             if (model != null)
             {
+                ViewData["Trucks"] = model.IsHere;
                 return View(model);
             }
             return HttpNotFound();
@@ -83,12 +85,14 @@ namespace FoodTrucks.Controllers
             if (service.DeleteLocationById(id))
             {
                 ViewData["SaveResult"] = "The Location has been deleted";
+
             }
             else
             {
                 ViewData["SaveResult"] = "The Location could not be deleted";
             }
-            return Redirect("Index");
+            return RedirectToAction("Index");
+
         }
 
         public ActionResult Edit (int id)
@@ -102,7 +106,6 @@ namespace FoodTrucks.Controllers
                 Address = location.Address,
                 TimeOpen = location.TimeOpen,
                 TimeClose = location.TimeClose,
-                IsHere = location.IsHere,
                 DateatLocation = location.DateatLocation,
             };
             if(model != null)
@@ -120,13 +123,13 @@ namespace FoodTrucks.Controllers
             if (service.EditLocation(model))
             {
                 ViewData["SaveResult"] = "Location was successfully updated";
-                return View(model);
+                return RedirectToAction("Index");
             }
             else
             {
                 ViewData["SaveResult"] = "Location could not be updated";
             }
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
     }
 }

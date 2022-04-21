@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FoodTrucks.Models.LocationListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Locations Home</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+  {
+    <div class="alert alert-success fade in" role="alert" >
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div>         
+  }
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateatLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsHere)
+        </th>
+    </tr>
+
+ @foreach (var item in Model)
+ {
+     <tr>
+         <td>
+             @Html.DisplayFor(modelItem => item.LocationId)
+         </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.LocationName)
+         </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.Address)
+         </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.DateatLocation)
+         </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.TimeOpen)
+         </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.TimeClose)
+         </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.IsHere)
+         </td>
+
+         <td>
+             @Html.ActionLink("Edit", "Edit", new {id=item.LocationId}) |
+             @Html.ActionLink("Details", "Details", new {id=item.LocationId}) |
+             @Html.ActionLink("Delete", "Delete", new {id=item.LocationId})
+         </td>
+
+     </tr>
+ }
+
+</table>
+

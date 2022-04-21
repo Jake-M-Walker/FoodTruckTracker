@@ -9,24 +9,25 @@ namespace FoodTrucks.Models
 {
     public class MenuItemEdit
     {
+        [Display(Name = "Item Id")]
         public int ItemId { get; set; }
 
-        [Required]
+        [Display(Name = "Item Name")]
         public string ItemName { get; set; }
 
-        [Required]
+        [Display(Name = "Description")]
         public string ItemDescription { get; set; }
 
-        [Required]
+        [Display(Name = "Price")]
         public decimal ItemPrice { get; set; }
 
-        [Required]
+        [Display(Name = "Cost for Truck")]
         public decimal CostforTruck { get; set; }
 
-        [Required]
+        [Display(Name = "Truck Id")]
         public int TruckId { get; set; }
 
-        [Required]
+        [Display(Name = "Truck Name")]
         public string TruckName { get; set; }
 
 

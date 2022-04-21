@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoodTrucks.Data;
@@ -16,14 +17,38 @@ namespace FoodTrucks.Models
         {
         }
 
-        public DbSet<Locations> Locations { get; set; }
-        public DbSet<MenuItems> MenuItems { get; set; }
-        public DbSet<Transactions> Transactions { get; set; }
-        public DbSet<Trucks> Trucks { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
+        }
+
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Truck> Trucks { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+        {
+            public IdentityUserLoginConfiguration()
+            {
+                HasKey(identityUserLogin => identityUserLogin.UserId);
+            }
+        }
+
+        public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+        {
+            public IdentityUserRoleConfiguration()
+            {
+                HasKey(identityUserRole => identityUserRole.UserId);
+            }
         }
     }
 }

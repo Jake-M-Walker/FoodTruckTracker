@@ -9,16 +9,19 @@ namespace FoodTrucks.Models
 {
     public class TrucksCreate
     {
-        [Required]
+        [Display(Name = "Owner")]
         public string Owner { get; set; }
 
-        [Required]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
-        [Required]
+        [Display(Name = "Food Type")]
         public string FoodType { get; set; }
 
-        [Required]
+        [Display(Name = "Truck Name")]
         public string TruckName { get; set; }
+
+        [Display(Name = "Current Location")]
+        public int? LocationId { get; set; }
     }
 }
